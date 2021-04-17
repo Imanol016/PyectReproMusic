@@ -54,7 +54,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewFolder1\obListaOrdenada\ListaOrdenada.cs" />
+    <Compile Include="listacircular\ListaCircular.cs" />
+    <Compile Include="listacircular\NodoListCir.cs" />
+    <Compile Include="ListaDoble\clsListaDoble.cs" />
+    <Compile Include="ListaDoble\iteradorLista.cs" />
+    <Compile Include="ListaDoble\NodoListDob.cs" />
+    <Compile Include="obListaOrdenada\ListaOrdenada.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -168,5 +173,6 @@
   <ItemGroup>
     <None Include="Resources\icons8-siguiente-26.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

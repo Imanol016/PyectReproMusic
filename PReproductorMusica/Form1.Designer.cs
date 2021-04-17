@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -43,6 +44,13 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.buttonEliminar = new System.Windows.Forms.Button();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.lbl_volumen = new System.Windows.Forms.Label();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.lbl_track_start = new System.Windows.Forms.Label();
+            this.lbl_track_end = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
@@ -52,14 +60,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
+            this.panel1.BackColor = System.Drawing.Color.Black;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel1.ForeColor = System.Drawing.Color.Red;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(873, 50);
@@ -79,19 +91,23 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Lucida Fax", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Lucida Fax", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(29, 13);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(167, 15);
+            this.label1.Size = new System.Drawing.Size(204, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Reproductor de Musica";
             // 
             // ListaGeneral
             // 
+            this.ListaGeneral.BackColor = System.Drawing.Color.Black;
+            this.ListaGeneral.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ListaGeneral.ForeColor = System.Drawing.Color.Red;
             this.ListaGeneral.FormattingEnabled = true;
+            this.ListaGeneral.ItemHeight = 16;
             this.ListaGeneral.Location = new System.Drawing.Point(624, 63);
             this.ListaGeneral.Name = "ListaGeneral";
-            this.ListaGeneral.Size = new System.Drawing.Size(164, 303);
+            this.ListaGeneral.Size = new System.Drawing.Size(164, 308);
             this.ListaGeneral.TabIndex = 1;
             this.ListaGeneral.SelectedIndexChanged += new System.EventHandler(this.listBoxMusica_SelectedIndexChanged);
             // 
@@ -114,18 +130,19 @@
             this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(12, 62);
             this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
             this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
-            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(606, 316);
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(606, 287);
             this.axWindowsMediaPlayer1.TabIndex = 3;
             // 
             // buttonAgregar
             // 
+            this.buttonAgregar.BackColor = System.Drawing.Color.Red;
             this.buttonAgregar.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonAgregar.Location = new System.Drawing.Point(794, 62);
             this.buttonAgregar.Name = "buttonAgregar";
             this.buttonAgregar.Size = new System.Drawing.Size(75, 31);
             this.buttonAgregar.TabIndex = 5;
             this.buttonAgregar.Text = "Agregar";
-            this.buttonAgregar.UseVisualStyleBackColor = true;
+            this.buttonAgregar.UseVisualStyleBackColor = false;
             this.buttonAgregar.Click += new System.EventHandler(this.buttonAgregar_Click);
             // 
             // pictureBox8
@@ -190,21 +207,88 @@
             // 
             // buttonEliminar
             // 
+            this.buttonEliminar.BackColor = System.Drawing.Color.Red;
             this.buttonEliminar.Font = new System.Drawing.Font("Lucida Bright", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonEliminar.Location = new System.Drawing.Point(795, 99);
             this.buttonEliminar.Name = "buttonEliminar";
             this.buttonEliminar.Size = new System.Drawing.Size(74, 31);
             this.buttonEliminar.TabIndex = 13;
             this.buttonEliminar.Text = "Eliminar";
-            this.buttonEliminar.UseVisualStyleBackColor = true;
+            this.buttonEliminar.UseVisualStyleBackColor = false;
             this.buttonEliminar.Click += new System.EventHandler(this.buttonEliminar_Click);
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Location = new System.Drawing.Point(477, 387);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(56, 42);
+            this.pictureBox5.TabIndex = 14;
+            this.pictureBox5.TabStop = false;
+            this.pictureBox5.Click += new System.EventHandler(this.pictureBox5_Click);
+            // 
+            // progressBar1
+            // 
+            this.progressBar1.Location = new System.Drawing.Point(58, 355);
+            this.progressBar1.Name = "progressBar1";
+            this.progressBar1.Size = new System.Drawing.Size(511, 16);
+            this.progressBar1.TabIndex = 15;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
+            // 
+            // lbl_volumen
+            // 
+            this.lbl_volumen.AutoSize = true;
+            this.lbl_volumen.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_volumen.Location = new System.Drawing.Point(395, 396);
+            this.lbl_volumen.Name = "lbl_volumen";
+            this.lbl_volumen.Size = new System.Drawing.Size(25, 15);
+            this.lbl_volumen.TabIndex = 16;
+            this.lbl_volumen.Text = "0%";
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(314, 387);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(75, 45);
+            this.trackBar1.TabIndex = 17;
+            this.trackBar1.Scroll += new System.EventHandler(this.trackBar1_Scroll);
+            // 
+            // lbl_track_start
+            // 
+            this.lbl_track_start.AutoSize = true;
+            this.lbl_track_start.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_track_start.Location = new System.Drawing.Point(9, 355);
+            this.lbl_track_start.Name = "lbl_track_start";
+            this.lbl_track_start.Size = new System.Drawing.Size(43, 15);
+            this.lbl_track_start.TabIndex = 18;
+            this.lbl_track_start.Text = "00.00";
+            this.lbl_track_start.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // lbl_track_end
+            // 
+            this.lbl_track_end.AutoSize = true;
+            this.lbl_track_end.Font = new System.Drawing.Font("Lucida Fax", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_track_end.Location = new System.Drawing.Point(575, 355);
+            this.lbl_track_end.Name = "lbl_track_end";
+            this.lbl_track_end.Size = new System.Drawing.Size(43, 15);
+            this.lbl_track_end.TabIndex = 19;
+            this.lbl_track_end.Text = "00.00";
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Aquamarine;
+            this.BackColor = System.Drawing.Color.Gray;
             this.ClientSize = new System.Drawing.Size(873, 437);
+            this.Controls.Add(this.lbl_track_end);
+            this.Controls.Add(this.lbl_track_start);
+            this.Controls.Add(this.trackBar1);
+            this.Controls.Add(this.lbl_volumen);
+            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.buttonEliminar);
             this.Controls.Add(this.pictureBox8);
             this.Controls.Add(this.pictureBox7);
@@ -229,7 +313,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -249,6 +336,13 @@
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.PictureBox pictureBox8;
         private System.Windows.Forms.Button buttonEliminar;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.Label lbl_volumen;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private System.Windows.Forms.Label lbl_track_start;
+        private System.Windows.Forms.Label lbl_track_end;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
